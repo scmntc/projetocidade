@@ -1,7 +1,9 @@
 <div class="card m-3">
-    <h5 class="card-header">{{descricao}}</h5>
+    <h5 class="card-header topo-card">{{descricao}}</h5>
     <div class="card-body">
-        <h5 class="card-title">População: {{pib}}</h5>
+        <h5 class="card-title">PIB: {{pib}}</h5>
+        <p class="card-text">População: {{populacao}}</p>
+        <p>Data de Emancipação: {{emancipacao | date: 'dd/MM/yyyy'}}</p>
         <!--   Transclude utilizado para passar os elementos que estiverem dentro do elemento no HTML  -->
         <div ng-transclude></div>
     </div>

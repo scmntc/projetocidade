@@ -7,7 +7,9 @@ angular.module('diretivas', [])
 
     ddo.scope = {
         descricao: '@',
-        pib: '@'
+        pib: '@',
+        populacao: '@',
+        emancipacao: '@'
     };
     ddo.transclude = true;
     ddo.templateUrl = 'js/directives/painel.html';

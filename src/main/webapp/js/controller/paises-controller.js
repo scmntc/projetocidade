@@ -15,7 +15,6 @@ angular.module('paisApp').controller('PaisesController', function($scope, appSer
             $scope.mensagem = 'Removido com sucesso!';
             var index = $scope.paises.indexOf(pais);
             $scope.paises.splice(index, 1);
-            console.log(value);
         }, function(error){
             $scope.mensagem = 'Erro ao Remover!';
             console.log(error);

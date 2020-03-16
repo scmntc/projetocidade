@@ -8,8 +8,8 @@
 <main>
     <!--  Usando o .splice.reverse para mostrar a lista em ordem decrescente  -->
     <div ng-repeat="pais in paises.slice().reverse()">
-        <painel descricao={{pais.descricao}} pib={{pais.pib}}>
-            <a href="/web/editar/{{pais.id}}" class="btn btn-primary">Editar</a>
+        <painel descricao={{pais.descricao}} pib={{pais.pib}} populacao={{pais.numeroPopulacao}} emancipacao={{pais.dataEmancipacao}}>
+            <a href="/web/editar/{{pais.id}}" class="btn btn-primary editButton">Editar</a>
             <button ng-click="remover(pais)" class="btn bordaBotao">Remover</button>
         </painel>
     </div>

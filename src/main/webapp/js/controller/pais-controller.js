@@ -7,7 +7,6 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
       appServicePaises.get({paisId:$routeParams.paisId}, function (pais) {
           pais.dataEmancipacao = new Date(pais.dataEmancipacao); // Converte a data para objeto data para não ocorrer ngModel:datefmt
           $scope.pais = pais;
-          console.log(pais);
       }, function (error) {
           console.log(error);
       });
@@ -24,7 +23,6 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
                             $scope.pais = {};
                             $scope.mensagem = 'Alterado com sucesso!';
                             $scope.myFunction();
-                            console.log(value);
                         }, function(error) {
                             $scope.mensagem = 'Erro ao alterar!';
                             $scope.myFunction();
@@ -35,7 +33,6 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
                         $scope.pais = {};
                         $scope.mensagem = 'Adicionado com sucesso!';
                         $scope.myFunction();
-                        console.log(value);
                     }, function(erro) {
                         $scope.mensagem = 'Erro ao adicionar!';
                         $scope.myFunction();
