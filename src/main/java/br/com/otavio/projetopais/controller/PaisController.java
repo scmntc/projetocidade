@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/paises")
+@CrossOrigin // Utilizar esta anotação para não ocorrer o problema do CORS
+@RequestMapping(value = "/api/paises")
 public class PaisController {
 
     @Autowired
@@ -43,16 +44,6 @@ public class PaisController {
 
     @PutMapping(value = "/{id}")
     ResponseEntity<Pais> alterarPais(@RequestBody Pais paisAlterado, @PathVariable Long id) {
-/*
-        Optional<Pais> busca = paisService.findById(id);
-        Pais pais = busca.get();
-
-        pais.setPib(paisAlterado.getPib());
-        pais.setDescricao(paisAlterado.getDescricao());
-        pais.setDataEmancipacao(paisAlterado.getDataEmancipacao());
-        pais.setNumeroPopulacao(paisAlterado.getNumeroPopulacao());
-
-        paisService.save(pais);*/
         return ResponseEntity.ok(paisService.save(paisAlterado));
     }
 

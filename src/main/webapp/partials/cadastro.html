@@ -1,0 +1,50 @@
+<div>
+    <div class="d-flex justify-content-center">
+        <h3 class="m-5">Pais {{pais.descricao}}</h3>
+    </div>
+    <!-- The actual snackbar -->
+    <div id="snackbar">{{mensagem}}</div>
+    <form novalidate name="formulario" ng-submit="submeter()">
+        <div class="form-group">
+            <label>Nome</label>
+            <input ng-model="pais.descricao" name="descricao" type="text" class="form-control "
+                   placeholder="Informe o nome do Pais" required>
+            <span ng-show="formulario.$submitted && formulario.descricao.$error.required"
+                  class="form-control alert-danger">
+                O Nome é obrigatório
+            </span>
+        </div>
+        <div class="form-group">
+            <label>PIB</label>
+            <input ng-model="pais.pib" name="pib" type="number" step="0.01" min="0" class="form-control"
+                   placeholder="Informe o PIB do Pais" required>
+            <span ng-show="formulario.$submitted && formulario.pib.$error.required"
+            class="form-control alert-danger">
+            O PIB obrigatório
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Data de Emancipação</label>
+            <input ng-model="pais.dataEmancipacao" name="dataEmancipacao" type="date" class="form-control" required>
+            <span ng-show="formulario.$submitted && formulario.dataEmancipacao.$error.required"
+                  class="form-control alert-danger">
+            Data de emancipação é obrigatória
+            </span>
+        </div>
+        <div class="form-group">
+            <label>População</label>
+            <input ng-model="pais.numeroPopulacao" name="numeroPopulacao" type="number" class="form-control"
+                   placeholder="Informe a População do Pais" required>
+            <span ng-show="formulario.$submitted && formulario.numeroPopulacao.$error.required"
+                  class="form-control alert-danger">
+            A quantidade de habitantes é obrigatória
+            </span>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary text-light bg-success" ng-disabled="formulario.$invalid">Salvar</button>
+            <a href="/" class="btn bordaBotao">Cancelar</a>
+        </div>
+    </form>
+
+
+</div>

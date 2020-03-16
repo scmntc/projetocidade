@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center p-4" >
+    <h1 class="">Paises</h1>
+</div>
+<div class="d-flex align-items-center flex-column">
+    <a href="/web/cadastro" class="btn btn-primary mb-4">Adicionar Pais</a>
+</div>
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+<main>
+    <!--  Usando o .splice.reverse para mostrar a lista em ordem decrescente  -->
+    <div ng-repeat="pais in paises.slice().reverse()">
+        <painel descricao={{pais.descricao}} pib={{pais.pib}}>
+            <a href="/web/editar/{{pais.id}}" class="btn btn-primary">Editar</a>
+            <button ng-click="remover(pais)" class="btn bordaBotao">Remover</button>
+        </painel>
+    </div>
+</main>
