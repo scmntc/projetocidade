@@ -12,7 +12,9 @@ public class ViewController {
             "/{[path:[^\\.]*}",
             "/web/cadastro",
             "/web/editar/{id}",
-            "/web"
+            "/web/editar/{id}/estados",
+            "/web",
+            "/web/cadastro/estado"
     })
     public String redirect() {
         return "forward:/";

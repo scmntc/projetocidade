@@ -1,22 +1,18 @@
 .bordaBotao{
-    border: grey solid 1px;
+    border: red solid 1px;
     color: red;
 }
 
 .bordaBotao:hover{
-    background-color: red;
     color: white;
-}
-
-.editButton{
-    color: blue;
-    background-color: white;
+    background-color: red;
 }
 
 .topo-card{
     background-color: mintcream;
     border: lightblue 1px solid;
 }
+
 
 .card{
     border: lightslategrey 1px solid;

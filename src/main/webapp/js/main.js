@@ -15,10 +15,15 @@ angular.module("paisApp", ['diretivas', 'ngRoute', 'ngResource', 'appService'])
         controller: 'PaisController'
     });
 
+    $routeProvider.when('/web/cadastro/estado',{
+        templateUrl: 'partials/estadocadastro.html',
+        controller: 'EstadoController'
+    });
+
     $routeProvider.when('/web/editar/:paisId', {
         templateUrl: 'partials/cadastro.html',
         controller: 'PaisController'
     });
-
+ 
     $routeProvider.otherwise({ redirectTo: '/web'});
 });

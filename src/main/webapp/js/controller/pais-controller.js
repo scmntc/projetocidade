@@ -4,7 +4,7 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
     $scope.mensagem = '';
 
     if($routeParams.paisId){
-      appServicePaises.get({paisId:$routeParams.paisId}, function (pais) {
+      appServicePaises.paises.get({paisId:$routeParams.paisId}, function (pais) {
           pais.dataEmancipacao = new Date(pais.dataEmancipacao); // Converte a data para objeto data para não ocorrer ngModel:datefmt
           $scope.pais = pais;
       }, function (error) {
@@ -18,7 +18,7 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
 
                 if($routeParams.paisId) {
 
-                    appServicePaises.update({paisId: $scope.pais.id},
+                    appServicePaises.paises.update({paisId: $scope.pais.id},
                         $scope.pais, function(value) {
                             $scope.pais = {};
                             $scope.mensagem = 'Alterado com sucesso!';
@@ -29,7 +29,7 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
                             console.log(error);
                         });
                 } else {
-                    appServicePaises.save($scope.pais,function() {
+                    appServicePaises.paises.save($scope.pais,function() {
                         $scope.pais = {};
                         $scope.mensagem = 'Adicionado com sucesso!';
                         $scope.myFunction();
@@ -42,6 +42,10 @@ angular.module('paisApp').controller('PaisController', function ($scope, appServ
             }
         }
 
+    }
+
+    $scope.show = function show() {
+        angular.element(document.querySelector('#myModal')).modal('show');
     }
 
     $scope.myFunction = function myFunction() {

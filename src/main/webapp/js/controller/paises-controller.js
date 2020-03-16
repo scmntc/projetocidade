@@ -3,14 +3,14 @@ angular.module('paisApp').controller('PaisesController', function($scope, appSer
     $scope.paises = [];
     $scope.mensagem = '';
 
-    appServicePaises.query(function(paises) {
+    appServicePaises.paises.query(function(paises) {
         $scope.paises = paises;
     }, function(erro) {
         console.log(erro);
     });
 
     $scope.remover = function (pais) {
-       appServicePaises.delete({paisId : pais.id}, function() {
+       appServicePaises.paises.delete({paisId : pais.id}, function() {
             $scope.pais = {};
             $scope.mensagem = 'Removido com sucesso!';
             var index = $scope.paises.indexOf(pais);

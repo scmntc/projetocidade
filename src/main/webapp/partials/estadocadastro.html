@@ -1,0 +1,42 @@
+<div ng-controller="PaisesController">
+    <div class="d-flex justify-content-center p-4">
+        <h1 class="">Cadastro de Estados</h1>
+    </div>
+    <!-- The actual snackbar -->
+    <div id="snackbar">{{mensagem}}</div>
+
+    <form novalidate name="formulario" ng-submit="salvar()">
+        <div class="form-group">
+            <label>Nome</label>
+            <input ng-model="estado.nome" name="nome" type="text" class="form-control "
+                placeholder="Informe o nome do Estado" required>
+            <span ng-show="formulario.$submitted && formulario.descricao.$error.required"
+                class="form-control alert-danger">
+                O Nome é obrigatório
+            </span>
+        </div>
+        <div class="form-group">
+            <label>PIB</label>
+            <input ng-model="estado.uf" name="uf" type="text" maxlength="2" class="form-control"
+                placeholder="Informe o PIB do Pais" required>
+            <span ng-show="formulario.$submitted && formulario.pib.$error.required" class="form-control alert-danger">
+                O PIB obrigatório
+            </span>
+        </div>
+        <div class="form-group">
+            <div class="dropdown">
+                <select class="form-control" ng-model="estado.pais.id"
+                    ng-options="pais.id as pais.descricao for pais in paises">
+                </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary text-light bg-success"
+                ng-disabled="formulario.$invalid">Salvar</button>
+            <a href="/" class="btn bordaBotao">Cancelar</a>
+        </div>
+
+    </form>
+
+
+</div>

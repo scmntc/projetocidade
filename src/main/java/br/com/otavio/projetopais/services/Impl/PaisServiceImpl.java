@@ -4,7 +4,6 @@ import br.com.otavio.projetopais.model.Pais;
 import br.com.otavio.projetopais.repository.PaisRepository;
 import br.com.otavio.projetopais.services.PaisService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

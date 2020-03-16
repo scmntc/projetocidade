@@ -1,6 +1,6 @@
 package br.com.otavio.projetopais.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,7 +10,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -35,5 +37,9 @@ public class Pais implements Serializable {
 
     @Column(name = "numeropopulacao")
     private BigInteger numeroPopulacao;
+
+    @OneToMany(mappedBy = "pais", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference // Para não ocorrer json loop
+    private List<Estado> estados = new ArrayList<Estado>();
 
 }

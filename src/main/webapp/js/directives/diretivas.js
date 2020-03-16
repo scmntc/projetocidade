@@ -9,7 +9,8 @@ angular.module('diretivas', [])
         descricao: '@',
         pib: '@',
         populacao: '@',
-        emancipacao: '@'
+        emancipacao: '@',
+        estados: '@'
     };
     ddo.transclude = true;
     ddo.templateUrl = 'js/directives/painel.html';
